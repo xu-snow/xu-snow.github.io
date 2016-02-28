@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            margin: 0 auto;
+            width: 350px;
+            height: 150px;
+            text-align: center;
+            position: relative;
+        }
+        #box{
+            width: 350px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            top:0;
+            left: 0;
+            list-style: none;
+            width: 9999px;
+        }
+        li{
+            float: left;
+        }
+        .left-btn{
+            cursor: pointer;
+            text-decoration: none;
+             background:rgba(0,0,0,0.3);
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top:50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            z-index: 99999;
+        }
+        .left-btn:after {
+            content: '';
+            width:10px;
+            height: 10px;
+            border: 5px solid #ffffff;
+           position: absolute;
+            top:8px;
+            left: 10px;
+            transform: rotate(-45deg);
+            margin: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+        .right-btn{
+            cursor: pointer;
+            text-decoration: none;
+            background:rgba(0,0,0,0.3);
+            display: inline-block;
+            position: absolute;
+           right: 0;
+            top:50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            z-index: 99999;
+        }
+        .right-btn:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 5px solid #ffffff;
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            transform: rotate(-45deg);
+            margin: 0;
+            border-top: 0;
+            border-left: 0;
+        }
+        .ico-box{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            z-index: 999;
+        }
+        .ico-box a {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            text-decoration: none;
+           cursor: pointer;
+        }
+        .ico-box a.active{
+            background-color: rgba(255,255,255,1);
+        }
+
+    </style>
+    <title>轮播图</title>
+</head>
+
+<body style="text-align: center">
+
+<div class="wrapper">
+    <div id="box">
+        <ul>
+            <li>
+                <a>
+                    <img src="img/text1.png">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="img/text2.png">
+                </a>
+            </li>
+
+
+        </ul>
+        <div id="ico" class="ico-box">
+            <a class="active"></a>
+            <a></a>
+        </div>
+        <a id="prev" class="left-btn"></a>
+        <a id="next" class="right-btn"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    (function(){
+        var box=document.getElementById('box');
+        var ul = box.getElementsByTagName('ul')[0];
+        ul.innerHTML += ul.innerHTML;
+        var li= ul.getElementsByTagName('li');
+        var img=ul.getElementsByTagName('img');
+        var l=li.length;
+        var len=li.length/2;
+        var li_w=0;
+        var prev=document.getElementById('prev');
+        var next=document.getElementById('next');
+        var ico=document.getElementById('ico').getElementsByTagName('a');
+        img[0].onload=function(){
+            li_w=li[0].offsetWidth;
+        };
+        var timer=null;
+        var now=0;
+        var support='ontouchstart' in window;
+        var start=support?'touchstart':'mousedown';
+        var move=support?'touchmove':'mousemove';
+        var  end=support?'touchend':'mouseup';
+        var startX=0;
+        var addEvent=function(obj,type,fn){
+            if(document.addEventListener){
+                obj.addEventListener(type,fn,false);
+            }
+        };
+        var removeEvent=function(obj,type,fn){
+            if(document.removeEventListener){
+                obj.removeEventListener(type,fn,false);
+            }
+        };
+
+
+        function auto(){
+            next.onclick();
+        }
+          next.onclick=function(){
+              if(now<l-1){
+                  now++
+
+              }else{
+                  now=len;
+                 //ul.style.transitionDuration = '0s';
+               // ul.style.transform='translate(-'+(li_w*(len-1))+'px,0)';
+               //   ul.style.transform='translate(-'+(li_w*(now))+'px,0)';
+                //  ul.style.transitionDuration = '1s';
+              console.log(111);
+                  ul.style.left=-(li_w*(len-1))+'px';
+              }
+              scroll();
+          };
+
+        function scroll(){
+            act(ul,'left',-li_w*(now));
+            //ul.style.transform='translate(-'+(li_w*(now))+'px,0)';
+           // ul.style.transitionDuration = '1s';
+            tab();
+        }
+        prev.onclick=function(){
+            if(now>0){
+                now--;
+                scroll();
+            }else{
+                now=len;
+               // ul.style.transition = '0s';
+               // ul.style.transform='translate(-'+(li_w*(now))+'px,0)';
+                    ul.style.left=-(li_w*(len))+'px';
+            }
+        };
+        function tab(){
+            for(var i=0;i<ico.length;i++){
+                ico[i].className='';
+            }
+                ico[now%2].className='active'
+        }
+        for(var i=0;i<len;i++){
+            ico[i].index=i;
+            ico[i].onclick=function(){
+                now=this.index;
+                //ul.style.transform='translate(-'+(li_w*(now))+'px,0)';
+                ul.style.left=-(li_w*(now))+'px';
+                for(var i=0;i<ico.length;i++){
+                    ico[i].classList.remove('active');
+                }
+                this.className='active'
+            }
+        }
+        box.onmouseover = function(){
+            clearInterval(timer);
+        };
+        box.onmouseout = function(){
+            timer = setInterval(auto, 4000);
+        };
+
+        //查找样式的大小
+        function css(obj,attr) {
+         if(obj.currentStyle){
+             return obj.currentStyle[attr];
+         }else{
+             return  getComputedStyle(obj,false)[attr]
+         }
+        }
+        function act(obj,attr,target){
+            obj.timer && clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                var stop=true;
+                var cur=parseInt(css(obj,attr));
+                var speed=(target-cur)/8;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                if(cur!=target){
+                    stop=false;
+                    obj.style[attr]=cur+speed+'px';
+                }
+                if(stop){
+                    clearInterval(obj.timer);
+                    obj.timer=null;
+                }
+            },30)
+        }
+        timer=setInterval(auto,2000);
+
+
+    }());
+
+</script>
+</body>
+</html>

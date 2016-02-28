@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            margin: 0 auto;
+            width: 350px;
+            height: 150px;
+            text-align: center;
+            position: relative;
+        }
+        #box{
+            width: 350px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            top:0;
+            left: 0;
+            list-style: none;
+            width: 9999px;
+        }
+        li{
+            float: left;
+        }
+        .left-btn{
+            cursor: pointer;
+            text-decoration: none;
+            background:rgba(0,0,0,0.3);
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top:50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            z-index: 99999;
+        }
+        .left-btn:after {
+            content: '';
+            width:10px;
+            height: 10px;
+            border: 5px solid #ffffff;
+            position: absolute;
+            top:8px;
+            left: 10px;
+            transform: rotate(-45deg);
+            margin: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+        .right-btn{
+            cursor: pointer;
+            text-decoration: none;
+            background:rgba(0,0,0,0.3);
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top:50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            z-index: 99999;
+        }
+        .right-btn:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 5px solid #ffffff;
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            transform: rotate(-45deg);
+            margin: 0;
+            border-top: 0;
+            border-left: 0;
+        }
+        .ico-box{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            z-index: 999;
+        }
+        .ico-box a {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .ico-box a.active{
+            background-color: rgba(255,255,255,1);
+        }
+
+    </style>
+    <title>轮播图</title>
+</head>
+
+<body style="text-align: center">
+
+<div class="wrapper">
+    <div id="box">
+        <ul>
+            <li>
+                <a>
+                    <img  class="item" src="img/text1.png">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img  class="item" src="img/text2.png">
+                </a>
+            </li>
+        </ul>
+        <div id="ico" class="ico-box">
+            <a class="active"></a>
+            <a></a>
+        </div>
+       <!--<a id="prev" class="left-btn"></a> -->
+       <!-- <a id="next" class="right-btn"></a>-->
+    </div>
+</div>
+<script>
+    (function(){
+        var ul=document.getElementsByTagName('ul')[0];
+        var li=ul.getElementsByTagName('li');
+        var ico=document.getElementById('ico').getElementsByTagName('a');
+        var len=li.length;
+        var support='ontouchstart' in window;
+        var start=support?'touchstart':'mousedown';
+        var move=support?'touchmove':'mousemove';
+        var end=support?'touchend':'mouseup';
+        var startX=0;
+        var now=0;
+        var last=0;
+        var width=0;
+        var img=ul.getElementsByTagName('img');
+        img[0].onload=function(){
+           width=li[0].offsetWidth;
+        };
+        var animate=true;
+        var addEvent=function(obj,type,fn){
+            if(document.addEventListener){
+                obj.addEventListener(type,fn,false);
+            }
+        };
+        var removeEvent=function(obj,type,fn){
+            if(document.removeEventListener){
+                obj.removeEventListener(type,fn,false);
+            }
+        };
+        var drag={
+            start:function(e){
+                console.log(e.type);
+
+                if(!e.changedTouches){
+
+                    return;}
+
+                startX= e.clientX? e.clientX: e.changedTouches[0].clientX;
+                var target= e.target;
+
+                if(!target.classList.contains('item')){
+                    return;
+                }
+                addEvent(target,move,drag.move);
+                addEvent(target,end,drag.end);
+                return false;
+            },
+            move:function(e){
+              if(!animate){return;}
+                animate=false;
+                var moveX= e.clientX? e.clientX: e.changedTouches[0].clientX;
+                if(moveX<startX){
+                    if(last<len-1){
+                        last++;
+                        return;
+                    }
+                }else{
+                    if(last>0){
+                        last--;
+                        return;
+                    }
+                }
+                ul.style.transform = 'translate(' + (-width * last + moveX - startX) + 'px, 0)';
+                ul.style.transition = '.5s';
+                e.stopPropagation();
+            },
+            end: function (e) {
+                var moveX= e.clientX? e.clientX: e.changedTouches[0].clientX;
+                ul.style.transform='translate(-'+(width*last)+'px,0)';
+                ul.style.transition='.5s';
+                var target= e.target;
+                if(!target.classList.contains('item')){
+                    return;
+                }
+                removeEvent(target,move,drag.move);
+                removeEvent(target,end,drag.end);
+                animate=true;
+                drag.cur()
+            },
+            finish:function (e){
+                animate=true;
+            },
+            cur:function(){
+               for(var i=0;i<li.length;i++){
+                   ico[i].classList.remove('active');
+               }
+                ico[last].classList.add('active')
+            }
+        };
+        addEvent(document,start,drag.start);
+        addEvent(ul,'webkitTransitionEnd',drag.finish);
+        for(var i=0;i<li.length;i++){
+            ico[i].index=i;
+            ico[i].onclick=function(){
+                last=this.index;
+                ul.style.transform='translate(-' + (width * last) + 'px, 0)';
+                ul.style.transition='.5s';
+                for(i=0;i<li.length;i++){
+                    ico[i].classList.remove('active');
+                }
+                this.classList.add('active')
+            }
+        }
+    }())
+</script>
+</body>
+</html>
