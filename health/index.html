@@ -10,30 +10,42 @@
     <link rel="prefetch" href="images/3.jpg">
     <link rel="prefetch" href="images/4.jpg">
     <link rel="prefetch" href="images/5.jpg">
-    <style >
-    *{margin: 0px;padding: 0px}
-    img{width: 100% ;cursor: pointer; }
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px
+    }
+    
+    img {
+        width: 100%;
+        cursor: pointer;
+    }
     </style>
-
 </head>
 
 <body style="text-align: center">
-<div><img src="" id="img" onclick="change()"/>
-</div>
-<script type="text/javascript">
-        var img = document.getElementById("img");
-      
-        var res = Math.ceil(Math.random() * 5)
+    <div><img src="" id="img" onclick="change()" />
+    </div>
+    <script type="text/javascript">
+    var img = document.getElementById("img");
+    var num
+    var res = Math.ceil(Math.random() * 5)
 
-       function change() {
-             var res = Math.ceil(Math.random() * 5)
+    function change() {
+
+        var res = Math.ceil(Math.random() * 5);
+        num = img.getAttribute("src").match(/\d/);
+        if (num==null||num != res) {
             img.setAttribute("src", "images/" + res + ".jpg")
-
+        } else {
+            change()
         }
-      
-   
-    (function (){
-       change();
+
+    }
+
+
+    (function() {
+        change();
     })()
     </script>
 </body>
