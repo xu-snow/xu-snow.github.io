@@ -2,422 +2,558 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
-    <title>index</title>
-
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/swiper.jquery.js"></script>
-
-    <style>
-
-        body{font-weight: lighter;}
-
-
-        .banner .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            width: 100%;;
-            background: #fff;
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-
-        .banner {
-            width: 100%;
-            height: auto;
-            text-align: center;
-
-        }
-
-        .banner img {
-            border: 0;
-            vertical-align: bottom;
-            width: 100%;
-        }
-
-        .content {
-            width: 100%;
-            padding: 0px;
-            margin: 5% 0;
-        }
-
-        .content .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-
-            width: 66%;
-
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-
-        .content img {
-
-            border: 0;
-            vertical-align: bottom;
-            width: 100%;
-        }
-
-        .content .main {
-            width: 100%;
-            height: 99%;
-            box-shadow: 0px 1px 5px 1px rgb(201, 201, 201);;
-            border-radius: 6px;;
-            overflow: hidden;
-            position: relative;
-
-        }
-
-        .content .main .top {
-            width: 100%;
-            position: relative;
-            padding: 5px 5px 15px 5px;
-            box-sizing: border-box;
-            text-align: left;
-            background-color: #fff;
-        }
-
-        .content .main .pic {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: auto;
-            z-index: -1;
-        }
-
-        .content .swiper-container {
-            height: 100%
-        }
-
-        .content .main .top .article {
-            display: none;
-        }
-
-        .content .main .top .title {
-            height: 30px;
-            line-height: 35px;
-            color: #747474;
-            font-size: 18px;
-            margin: 0px;
-            padding-left: 30px
-        }
-
-        .content .main .top i:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 18px;
-            height: 16px;
-            right: 10px;
-            bottom: 2px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-image: url("images/icon_pic/下拉icon@3x.png")
-        }
-
-        .content .main .top.active i:after {
-            background-image: url("images/icon_pic/上翻icon@3x.png")
-        }
-
-        .content .main .top .title.icon:before {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 30px;
-            height: 30px;
-            left: 5px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        .content .main .jianzhi .title.icon:before {
-            background-image: url("images/icon_pic/svg/减脂icon.svg")
-        }
-
-        .content .main .junheng .title.icon:before {
-            background-image: url("images/icon_pic/svg/均衡系列icon.svg")
-        }
-
-        .content .main .zengji .title.icon:before {
-            background-image: url("images/icon_pic/svg/增肌icon.svg")
-        }
-
-        .content .main .top > span {
-            font-size: 14px;
-            color: #747474;
-        }
-
-        .content .main .top .top_content {
-            font-size: 13px;
-            color: #747474;
-            margin: 6px 0px;
-            line-height: 13px;
-            width: 95%
-        }
-
-        .top_content .wenzi1 {
-            width: 65px;
-            display: inline-block;
-        }
-
-        .top_content .bar {
-            display: inline-block;;
-            height: 7px;
-            border-radius: 5px;
-            vertical-align: middle;
-        }
-
-        .main .top .article {
-            position: relative
-        }
-
-        .top_content .bar1 {
-            background-color: #7a4cff;
-            width: 15%
-        }
-
-        .top_content .bar2 {
-            background-color: #40bbd5;
-            width: 40%
-        }
-
-        .top_content .bar3 {
-            background-color: #57af45;
-            width: 25%
-        }
-
-        .top_content .wenzi2 {
-            display: inline-block;
-            position: absolute;
-            right: 0;
-            font-size: 12px;
-            font-style: italic;
-        }
-        .content .swiper-button-next,.content .swiper-button-prev{
-            width: 54px;
-            height: 42px;
-            background-size: contain;
-        }
-
-        .content .swiper-button-next{background-image: url("images/icon_pic/右翻icon@2x.png");}
-        .content .swiper-button-prev{background-image: url("images/icon_pic/左翻icon@2x.png");}
-        footer{position: absolute;bottom: 0px;left: 0px;right: 0px;height: 48px;text-align: center;
-            color: #fefefe;
-            font-size: 15px;
-        background-color: #e28231;
-            text-shadow: 0 0 0 #fff;}
-        footer .footer_content{height: 48px;line-height: 48px}
-        footer .footer_content span{display: inline-block}
-        footer .footer_content span:before{display: inline-block;content: '';;height: 14px;width: 14px;
-        background-repeat: no-repeat; background-size: contain;background-image:url("images/icon_pic/生成配餐icon@2x.png") }
-
-    </style>
+    <title>旭儿的简介</title>
+    <link rel="stylesheet" href="style/index.css">
 </head>
-<body>
 
-    <div class="banner" id="banner">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/top.jpg"></div>
-                <div class="swiper-slide"><img src="images/top.jpg"></div>
-                <div class="swiper-slide"><img src="images/top.jpg"></div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-
+<body id="meidia">
+    <section class="top">
+        <div class="inline-wrapper">
+            <span class="sequence">1</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cg">&lt;!DOCTYPE html&gt;</span>
         </div>
-    </div>
-
-    <div  class="content">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="main">
-                        <div class="top jianzhi ">
-                            <p class="title icon">减脂系列</p>
-                            <span>(500kcal&nbsp;—&nbsp;800kcal)</span>
-
-                            <div class="article">
-                                <div class="top_content">
-                                    <span class="wenzi1">脂肪</span>
-
-                                    <div class="bar bar1"></div>
-                                    <span class="wenzi2">(20%-30%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">蛋白脂</span>
-
-                                    <div class="bar bar2"></div>
-                                    <span class="wenzi2">(10%-15%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">碳水化合物</span>
-
-                                    <div class="bar bar3"></div>
-                                    <span class="wenzi2">(55%-65%)</span>
-                                </div>
-                            </div>
-                            <i></i>
-                        </div>
-                        <div class="pic">
-                            <img src="images/content.jpg">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-
-                    <div class="main">
-                        <div class="top zengji ">
-                            <p class="title icon">增肌系列</p>
-                            <span>(500kcal&nbsp;—&nbsp;800kcal)</span>
-
-                            <div class="article">
-                                <div class="top_content">
-                                    <span class="wenzi1">脂肪</span>
-
-                                    <div class="bar bar1"></div>
-                                    <span class="wenzi2">(20%-30%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">蛋白脂</span>
-
-                                    <div class="bar bar2"></div>
-                                    <span class="wenzi2">(10%-15%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">碳水化合物</span>
-
-                                    <div class="bar bar3"></div>
-                                    <span class="wenzi2">(55%-65%)</span>
-                                </div>
-                            </div>
-                            <i></i>
-                        </div>
-                        <div class="pic">
-                            <img src="images/content.jpg">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-
-                    <div class="main">
-                        <div class="top junheng ">
-                            <p class="title icon">均衡系列</p>
-                            <span>(500kcal&nbsp;—&nbsp;800kcal)</span>
-
-                            <div class="article">
-                                <div class="top_content">
-                                    <span class="wenzi1">脂肪</span>
-
-                                    <div class="bar bar1"></div>
-                                    <span class="wenzi2">(20%-30%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">蛋白脂</span>
-
-                                    <div class="bar bar2"></div>
-                                    <span class="wenzi2">(10%-15%)</span>
-                                </div>
-                                <div class="top_content">
-                                    <span class="wenzi1">碳水化合物</span>
-
-                                    <div class="bar bar3"></div>
-                                    <span class="wenzi2">(55%-65%)</span>
-                                </div>
-                            </div>
-                            <i></i>
-                        </div>
-                        <div class="pic">
-                            <img src="images/content.jpg">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
+        <div class="inline-wrapper">
+            <span class="sequence">2</span>
+            <span class="caret-down icon-caret-down"></span>
+            <span class="cr">&lt;html </span>
+            <span class="cg">lang</span>
+            <span>=</span>
+            <span class="cy">"zh-cn"</span>
+            <span class="cr">&gt;</span>
         </div>
+        <div class="inline-wrapper">
+            <span class="sequence">3</span>
+            <span class="caret-down icon-caret-down"></span>
+            <span class="cr">&lt;head&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">4</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l1">&lt;mete</span>
+            <span class="cg">charset</span>
+            <span>=</span>
+            <span class="cy">"utf-8"</span>
+            <span class="cr">&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">5</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l1">&lt;title&gt;</span>
+            <span class="title">只是一份介绍</span>
+            <span class="cr">&lt;/title&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">6</span>
+            <span class="caret chidden icon-caret-down"></span>
+            <span class="cr">&lt;/head&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">7</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr">&lt;body&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">8</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l1">&lt;header&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">9</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;h1&gt;</span>
+            <span class="strong1">郑旭's resume</span>
+            <span class="cr">&lt;/h1&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">10</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l1">&lt;/header&gt;</span>
+        </div>
+    </section>
+    <section class="omitBtn">
+        <div class="inline-wrapper">
+            <span class="sequence">11</span>
+            <span class="caret-right  icon-caret-right"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"About-me"</span>
+            <span class="cr">&gt;</span>
+            <span class="omit">- - -</span>
+            <span class="cr">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--about-me begin-->
+    <section class="about-me content-wrapper op">
+        <div class="inline-wrapper btn closeBtn" data-repeat="true">
+            <span class="sequence">11</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"About-me"</span>
+            <span class="cr">&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">12</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;h2&gt;</span>
+            <span class="strong3">关于我</span>
+            <span class="cr">&lt;/h2&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">13</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l2">&lt;p&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">14</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+
+            <span class="l3 strong4">一名未来优秀的前端攻城狮。</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">15</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+
+            <span class="l3 strong4">面对日新月异的前端开发技术有着浓厚的兴趣，梦想前端能搞定所有事情 </span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">15</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+
+            <span class="l3 strong4">自学Angularjs、nodejs、bootstrap等流行技术。 </span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">15</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+
+            <span class="l3 strong4">目前在一家电商任前端开发工程师。 </span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">16</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+
+            <span class="l3 strong4">对生活工作充满激情。</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">17</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;/p&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">18</span>
+            <span class="caret-down icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">19</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">个人信息：郑旭 男 广东/潮州</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">24</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">学历：浙江科技学院 2016 本科</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">专业：信息管理与信息系统</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">22</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">求职意向：前端工程师</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">23</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">Email：332171564@qq.com</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">23</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">QQ：332171564</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">23</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="strong6">TELL：13777363577</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">24</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        <div id="logo" class="inline-wrapper btn hover">
+            <span class="sequence">25</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l2">&lt;div&gt;</span>
+            <span class="cr">&lt;img</span>
+            <span class="cg">src</span>
+            <span>=</span>
+            <span class="strong5 mark">"img/me.jpg"</span>
+            <span class="cg">alt</span>
+            <span>=</span>
+            <span class="strong5">"我的头像"</span>
+            <span class="cr">&gt;</span>
+            <span class="cr">&lt;/div&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">26</span>
+            <span class="caret-right chidden icon-caret-right"></span>
+            <span class="cr l1">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--about-me end-->
+    <section class="omitBtn">
+        <div class="inline-wrapper">
+            <span class="sequence">27</span>
+            <span class="caret-right  icon-caret-right"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Skills"</span>
+            <span class="cr">&gt;</span>
+            <span class="omit">- - -</span>
+            <span class="cr">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--skills beging-->
+    <section class="skills content-wrapper op">
+        <div class="inline-wrapper btn closeBtn" data-repeat="true">
+            <span class="sequence">27</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Skills"</span>
+            <span class="cr">&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">28</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;h2&gt;</span>
+            <span class="strong3">我的技能</span>
+            <span class="cr">&lt;/h2&gt;</span>
+        </div>
+        <div class="inline-wrapper btn hover instruction" data-id="#code-chart">
+            <span class="sequence">29</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l2">&lt;div&gt;</span>
+            <span class="cr">&lt;img</span>
+            <span class="cg">src</span>
+            <span>=</span>
+            <span class="strong5  mark">"code.jpg"</span>
+            <span class="cg">alt</span>
+            <span>=</span>
+            <span class="strong5">"编程"</span>
+            <span class="cr">&gt;</span>
+            <span class="cr">&lt;/div&gt;</span>
+        </div>
+        <div class="inline-wrapper btn hover instruction" data-id="#design-chart">
+            <span class="sequence">30</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l2">&lt;div&gt;</span>
+            <span class="cr">&lt;img</span>
+            <span class="cg">src</span>
+            <span>=</span>
+            <span class="strong5 mark">"design.jpg"</span>
+            <span class="cg">alt</span>
+            <span>=</span>
+            <span class="strong5">"设计"</span>
+            <span class="cr">&gt;</span>
+            <span class="cr">&lt;/div&gt;</span>
+        </div>
+        <div class="inline-wrapper btn hover instruction" data-id="#tools-chart">
+            <span class="sequence">31</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l2">&lt;div&gt;</span>
+            <span class="cr">&lt;img</span>
+            <span class="cg">src</span>
+            <span>=</span>
+            <span class="strong5 mark">"tools.jpg"</span>
+            <span class="cg">alt</span>
+            <span>=</span>
+            <span class="strong5">"工具"</span>
+            <span class="cr">&gt;</span>
+            <span class="cr">&lt;/div&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">32</span>
+            <span class="caret-right chidden icon-caret-right"></span>
+            <span class="cr l1">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--skills end-->
+    <section class="omitBtn">
+        <div class="inline-wrapper">
+            <span class="sequence">33</span>
+            <span class="caret-right  icon-caret-right"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Projects"</span>
+            <span class="cr">&gt;</span>
+            <span class="omit">- - -</span>
+            <span class="cr">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--projects begin-->
+    <section class="projects content-wrapper op">
+        <div class="inline-wrapper btn closeBtn" data-repeat="true">
+            <span class="sequence">33</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Projects"</span>
+            <span class="cr">&gt;</span>
+        </div>
+        <div class="inline-wrapper ">
+            <span class="sequence">34</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;h2&gt;</span>
+            <span class="strong3">项目列表</span>
+            <span class="cr">&lt;/h2&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">35</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="http://www.gewei.com/" class="link">歌薇商城</a></span>
+            
+            
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="http://m.gewei.com" class="link">薇创科技移动端商城</a></span>
+           
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        
+        
+        <div class="inline-wrapper">
+            <span class="sequence">25</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">33</span>
+            <span class="caret-right chidden icon-caret-right"></span>
+            <span class="cr l1">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--project end-->
+    <section class="omitBtn">
+        <div class="inline-wrapper">
+            <span class="sequence">11</span>
+            <span class="caret-right  icon-caret-right"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Contact-me"</span>
+            <span class="cr">&gt;</span>
+            <span class="omit">- - -</span>
+            <span class="cr">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--contact me begin-->
+    <section class="contact-me content-wrapper op">
+        <div class="inline-wrapper btn closeBtn" data-repeat="true">
+            <span class="sequence">33</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l1">&lt;section</span>
+            <span class="cg">class</span>
+            <span>=</span>
+            <span class="strong2">"Contact-me"</span>
+            <span class="cr">&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">34</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;h2&gt;</span>
+            <span class="strong3">谢谢观看，如果对我有更深了解：</span>
+            <span class="cr">&lt;/h2&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">35</span>
+            <span class="caret-down  icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="https://xu-snow.github.io" class="link">个人主页</a></span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="https://github.com/xu-snow" class="link">Github</a></span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+       
+       
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="https://www.zhihu.com/people/xu-er-29-34" class="link">知乎</a></span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span><a target="_blank" href="http://weibo.com/xutea" class="link">新浪微博</a></span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="link">TELL:13777363577</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">21</span>
+            <span class="caret-down chidden  icon-caret-down"></span>
+            <span class="cr l3">&lt;li&gt;</span>
+            <span class="link">QQ:332171564</span>
+            <span class="cr">&lt;/li&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">25</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l2">&lt;/ul&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">33</span>
+            <span class="caret-right chidden icon-caret-right"></span>
+            <span class="cr l1">&lt;/section&gt;</span>
+        </div>
+    </section>
+    <!--end-->
+    <section class="bottom">
+        <div class="inline-wrapper">
+            <span class="sequence">5</span>
+            <span class="caret-down chidden icon-caret-down"></span>
+            <span class="cr l1">&lt;footer&gt;</span>
+            <span><a href="img/resume.zip" class="link2">Resume download <i class="icon-download"></i></a></span>
+            <span class="cr">&lt;/footer&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">7</span>
+            <span class="caret chidden icon-caret-down"></span>
+            <span class="cr">&lt;/body&gt;</span>
+        </div>
+        <div class="inline-wrapper">
+            <span class="sequence">7</span>
+            <span class="caret chidden icon-caret-down"></span>
+            <span class="cr">&lt;/html&gt;</span>
+        </div>
+    </section>
+    <div id="logo-wra">
+        <div class="caretWra"><span class="icon-caret-down"></span></div>
+        <div class="imgWra"><img src="img/me.jpg" alt="个人照"></div>
+
     </div>
-   <footer><div class="footer_content"><span>&nbsp生&nbsp;成&nbsp;配&nbsp;餐</span></div></footer>
-
-
-
-<script src="js/bootstrap.min.js"></script>
-<script>
-    var content = new Swiper('.content .swiper-container', {
-
-        prevButton:'.swiper-button-prev',//前后按钮
-        nextButton:'.swiper-button-next',
-        slidesPerView: 'auto',
-        spaceBetween: 30,//页面间距
-        centeredSlides: true,//活动块居中
-        preventClicksPropagation: true,//阻止冒泡
-        paginationClickable: true,//分页按钮点击有效
-        loop: true,//无限循环
-        loopedSlides: 3,
-
-    });
-
-    var banner= new Swiper('.banner .swiper-container', {
-        pagination: '.swiper-pagination',//分页器
-        paginationClickable: true,//分页按钮点击有效
-        spaceBetween: 0,//页面间距
-        centeredSlides: true,//活动块居中
-        autoplay: 2500,//设置后自动转
-        autoplayDisableOnInteraction: false,//操作swiper之后是否停止
-        loop: true,//无限循环
-        setWrapperSize :true,
-
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        console.log($(window).height())
-        $("body").height($(window).height())
-        var height = ($("body").width()) * 0.75;
-        $(".content").height(height);
-        $(".content .main .top i").on("click", function () {
-            if ($(this).parent().hasClass("active")) {
-                $(this).parent().removeClass("active")
-            } else {
-                $(this).parent().addClass("active")
-            }
-            $(this).parent().find(".article").slideToggle()
-        });
-
-    })
-
-</script>
-
-
+    <div id="code-chart" class="chart">
+        <div class="chart-wra">
+            
+            <span class="strong7">HTML5</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">CSS3</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">JavaScript</span>
+        </div>
+       
+        
+        <div class="chart-wra">
+            
+            <span class="strong7">jQuery</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">Bootstrap</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">Angularjs(plan)</span>
+        </div>
+         <div class="chart-wra">
+            
+            <span class="strong7">Node(plan)</span>
+        </div>
+        <div class="closeWra"><span class="icon-close"></span></div>
+    </div>
+    <div id="design-chart" class="chart">
+        <div class="chart-wra">
+            
+            <span class="strong7">PS</span>
+        </div>
+        
+        <div class="closeWra"><span class="icon-close"></span></div>
+    </div>
+    <div id="tools-chart" class="chart">
+        <div class="chart-wra">
+           
+            <span class="strong7">webstorm</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">Sublime</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">git</span>
+        </div>
+        <div class="chart-wra">
+            
+            <span class="strong7">svn</span>
+        </div>
+        <div class="closeWra"><span class="icon-close"></span></div>
+    </div>
+    <!--<script src="script/jquery.min.js"></script>
+    <script src="script/jquery.classyloader.min.js"></script>
+    <script src="script/index.js"></script>-->
+    <script src="script/all.min.js"></script>
 </body>
+
 </html>
