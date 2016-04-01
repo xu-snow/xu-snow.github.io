@@ -25,15 +25,12 @@
             color: #747474;
             line-height: 2;
         position: relative}
-        .header_shop .inday span{font-size: 0.8rem;
+        .header_shop .inday span{font-size: 1rem;
         position: absolute;
         bottom: -0.4rem;
         left: 0px;
         right: 0;
-            -webkit-transform: scale(0.7);
-            -ms-transform: scale(0.7);
-            -o-transform: scale(0.7);
-            transform: scale(0.7);}
+            }
         .header_shop .pic.empty:before{background-image: url("images/icon_pic/svg/empty_before.svg") ;}
         .header_shop .pic.enough:before{background-image: url("images/icon_pic/svg/eought_before.svg") ;}
         .header_shop .pic.less:before{background-image: url("images/icon_pic/svg/less_before.svg") ;}
@@ -73,13 +70,13 @@
             -o-transform:rotate(0deg) ;
             transform: rotate(0deg);
             border-radius:50%;
-        box-shadow:  0px 0px 7px 1px rgb(201, 201, 201);z-index: 201}
+      z-index: 201}
 
-        .left_btn.active{ -webkit-transform:rotate(-90deg);
-            -moz-transform:rotate(-90deg) ;
-            -ms-transform:rotate(-90deg) ;
-            -o-transform:rotate(-90deg) ;
-            transform: rotate(-90deg);}
+        .left_btn.active{ -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg) ;
+            -ms-transform:rotate(-45deg) ;
+            -o-transform:rotate(-45deg) ;
+            transform: rotate(-45deg);}
         .right_btn {
             width: 4.8rem;
             height: 6rem;
@@ -184,7 +181,7 @@
         .product_buy .discount_inf{text-align:center;color: #EF135B;font-size: 1rem;position: relative;bottom: 1.5rem}
     </style>
 </head>
-<body  style="background-color: #ffffff">
+<body  style="background-color: #ffffff;outline:none">
 <header class="header_shop">
     <div class="day day7 pic empty active"><div class="inday">周日<span>售罄</span></div></div>
     <div class="day day1 pic enough"><div class="inday">周一<span>充足</span></div></div>
@@ -400,7 +397,7 @@
             </div>
 
         </div>
-        <div class="discount_inf">满20减5远,团队订餐优惠更多哟~</div>
+        <div class="discount_inf">满20减5元,团队订餐优惠更多哟~</div>
         <button class="pro_click btn ">
             去结算
         </button>
@@ -424,22 +421,31 @@
         if($(this).hasClass("active")){$(this).removeClass("active");}else{
         $(this).addClass("active");}
         $(".matte").toggle();
-        $(".up_left_btn").slideToggle(500)
+        $(".up_left_btn").slideToggle(500);
+        if($("body").css("overflow")=='hidden'){
+        	 $("body").css("overflow","visible")
+        }else  {
+        	$("body").css("overflow",'hidden')
+        }
     })
     $(".matte").on('click',function(){
         $(".left_btn").removeClass("active");
         $(".matte").toggle();
         $(".product_detail").hide();
-        $(".up_left_btn").slideUp(500)
+        $(".up_left_btn").slideUp(500);
+        $("body").css("overflow","visible")
 
     })
     $(".product_close").on('click',function(){
         $(".product_detail").hide();
         $(".matte").hide();
+        $("body").css("overflow","visible")
+
     })
     $(".right_btn").on('click',function(){
         $(".matte").show();
         $(".product_detail").show();
+        $("body").css("overflow","hidden");
     })
     var changestatus=function(e){
       $(e.target).addClass("active").siblings().removeClass("active");
@@ -470,7 +476,7 @@
     $(window).scroll(function(){
 
         var scrollTop = $(window).scrollTop()
-        if(scrollTop > 25){
+        if(scrollTop > 10){
             $(".header_shop").addClass("scroll")
         }else{
             $(".header_shop").removeClass("scroll")
