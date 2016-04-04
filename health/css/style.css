@@ -233,12 +233,12 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
         -o-transform: scale(0.78);
         transform: scale(0.78);
             }
-        .header_shop .pic.empty:before{background-image: url("images/icon_pic/售罄@3x.png") ;}
-        .header_shop .pic.enough:before{background-image: url("images/icon_pic/充足@3x.png") ;}
-        .header_shop .pic.less:before{background-image: url("images/icon_pic/少量@3x.png") ;}
-        .header_shop .pic.empty.active:before{background-image: url("images/icon_pic/售罄点击后@3x.png") ;}
-        .header_shop .pic.enough.active:before{background-image: url("images/icon_pic/充足@3x点击后.png") ;}
-        .header_shop .pic.less.active:before{background-image: url("images/icon_pic/少量点击后@3x.png") ;}
+        .header_shop .pic.empty:before{background-image: url("../images/icon_pic/售罄@3x.png") ;}
+        .header_shop .pic.enough:before{background-image: url("../images/icon_pic/充足@3x.png") ;}
+        .header_shop .pic.less:before{background-image: url("../images/icon_pic/少量@3x.png") ;}
+        .header_shop .pic.empty.active:before{background-image: url("../images/icon_pic/售罄点击后@3x.png") ;}
+        .header_shop .pic.enough.active:before{background-image: url("../images/icon_pic/充足@3x点击后.png") ;}
+        .header_shop .pic.less.active:before{background-image: url("../images/icon_pic/少量点击后@3x.png") ;}
 
         .header_shop .day.active .inday {background-color: #e28231;color: #fff}
         .warp{margin: 8rem auto 0;width: 93.6%}
@@ -254,14 +254,14 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
         .type_select .types.active{background-color:#e28231;color: #ffffff}
         .type_select .types:last-child{margin: 0;}
         .type_select .types:before{content: '';display: inline-block;width: 1.42rem;height: 1.42rem;background-repeat: no-repeat;background-size: contain;vertical-align: text-bottom;}
-        .type_select .types.jianzhi:before{background-image: url("images/icon_pic/svg/减脂icon.svg")}
-        .type_select .types.junheng:before{background-image: url("images/icon_pic/svg/均衡系列icon.svg")}
-        .type_select .types.zengji:before{background-image: url("images/icon_pic/svg/增肌icon.svg")}
-        .type_select .types.jianzhi.active:before{background-image: url("images/icon_pic/svg/减脂icon_after.svg")}
-        .type_select .types.junheng.active:before{background-image: url("images/icon_pic/svg/均衡系列icon_after.svg")}
-        .type_select .types.zengji.active:before{background-image: url("images/icon_pic/svg/增肌icon_after.svg")}
+        .type_select .types.jianzhi:before{background-image: url("../images/icon_pic/svg/减脂icon.svg")}
+        .type_select .types.junheng:before{background-image: url("../images/icon_pic/svg/均衡系列icon.svg")}
+        .type_select .types.zengji:before{background-image: url("../images/icon_pic/svg/增肌icon.svg")}
+        .type_select .types.jianzhi.active:before{background-image: url("../images/icon_pic/svg/减脂icon_after.svg")}
+        .type_select .types.junheng.active:before{background-image: url("../images/icon_pic/svg/均衡系列icon_after.svg")}
+        .type_select .types.zengji.active:before{background-image: url("../images/icon_pic/svg/增肌icon_after.svg")}
 
-        .left_btn{width: 4.42rem;height: 4.42rem;margin-left: 1rem;margin-bottom: 1rem;position: fixed;background-image: url("images/icon_pic/menu.png");background-repeat: no-repeat;
+        .left_btn{width: 4.42rem;height: 4.42rem;margin-left: 1rem;margin-bottom: 1rem;position: fixed;background-image: url("../images/icon_pic/menu.png");background-repeat: no-repeat;
         background-size: contain;bottom: 0px;
             -webkit-transition: all 0.5s ;
             -o-transition: all 0.5s ;
@@ -285,7 +285,7 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
             margin-right: 1rem;
             margin-bottom: 0.167rem;
             position: fixed;
-            background-image: url("images/icon_pic/svg/购物车大.svg");
+            background-image: url("../images/icon_pic/svg/购物车大.svg");
             background-repeat: no-repeat;
             background-size: contain;
             bottom: 0px;
@@ -295,7 +295,7 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
         }
         .right_btn.active{
 
-            background-image: url("images/icon_pic/svg/购物车大(数字).svg");
+            background-image: url("../images/icon_pic/svg/购物车大(数字).svg");
            color: #e28231;
         }
         .right_btn .order-numbers {position: absolute;
@@ -309,15 +309,15 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
 
         .up_left_btn{width:4.8rem;height: 19rem;position: fixed;margin-left: 1rem;bottom:5.8rem;display: none;z-index: 201}
         .up_left_btn .bar{width: 100%;height:6rem;;color: #ffffff;font-size: 1rem;font-weight: 100;text-align: center}
-        .up_left_btn .bar .bar1{background-image:url("images/icon_pic/svg/服务中心.svg");}
-        .up_left_btn .bar .bar2{background-image:url("images/icon_pic/svg/用户中心.svg");}
-        .up_left_btn .bar .bar3{background-image:url("images/icon_pic/svg/健康日历.svg");}
+        .up_left_btn .bar .bar1{background-image:url("../images/icon_pic/svg/服务中心.svg");}
+        .up_left_btn .bar .bar2{background-image:url("../images/icon_pic/svg/用户中心.svg");}
+        .up_left_btn .bar .bar3{background-image:url("../images/icon_pic/svg/健康日历.svg");}
         .up_left_btn .bar .onbar{width: 100%;height:5.8rem;background-repeat: no-repeat;
             background-size: cover;}
         .matte{position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,0.6);z-index: 200;display: none;}
         .shop_footer{width: 100%;height: auto;margin-bottom: 2rem;text-align:center;color: #747474;font-size: 1rem;opacity: 0.5;}
         .shop_footer .jitang{line-height:5.42rem;width: 14.83rem;height: 4rem;background-size: 2.83rem 2.33rem;background-position: center top;
-            background-image: url("images/icon_pic/svg/每日鸡汤.svg");  background-repeat: no-repeat;margin: 0 auto;border-bottom:1px solid #747474 }
+            background-image: url("../images/icon_pic/svg/每日鸡汤.svg");  background-repeat: no-repeat;margin: 0 auto;border-bottom:1px solid #747474 }
         .jitang_content{width: 14.83rem;height: 2rem;margin: 0 auto; -webkit-transform: scale(0.7);
             -ms-transform: scale(0.833);
             -o-transform: scale(0.833);
@@ -363,7 +363,7 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
         }
         .product_detail .product_buy .timer>span.tclose{font-size: 1.25rem;font-weight:200;}
         .product_detail .product_buy .timer>.product_close{display:inline-block;width: 1.25rem;height: 1.25rem  ;
-        background-repeat: no-repeat;background-size: contain;background-image: url("images/icon_pic/close.png");
+        background-repeat: no-repeat;background-size: contain;background-image: url("../images/icon_pic/close.png");
             float: right;
             margin-top: 1.2rem;}
         .product_detail .product_buy .product{width: 100%;height: 8.75rem;border-bottom:1px solid #aaaaaa; }
@@ -377,7 +377,7 @@ footer .footer_content span:before{display: inline-block;content: '';;height: 14
         .quantity_div{display: inline-block}
         .quantity_div input[type=tel]{width: 2.75rem;border: 0;text-align: center}
         .quantity_div .btn{width: 2.15rem;height: 2.5rem;background-repeat: no-repeat;background-size: contain;padding: 0;border: 0; }
-        .quantity_div .reduce{background-image: url("images/icon_pic/结算切图/减.svg");background-position: right;}
-        .quantity_div .add{background-image: url("images/icon_pic/结算切图/加.svg");background-position: left;}
+        .quantity_div .reduce{background-image: url("../images/icon_pic/结算切图/减.svg");background-position: right;}
+        .quantity_div .add{background-image: url("../images/icon_pic/结算切图/加.svg");background-position: left;}
         .product_buy .pro_click{width: 100%;height:3.333rem;  color: #fff;  background-color: #e28231;  font-size: 1.417rem;  margin-top: -0.5rem;}
         .product_buy .discount_inf{text-align:center;color: #EF135B;font-size: 1rem;position: relative;bottom: 1.5rem}
