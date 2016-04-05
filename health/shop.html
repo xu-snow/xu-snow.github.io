@@ -12,9 +12,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/swiper.jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+  
 
 </head>
-<body  style="background-color: #ffffff;outline:none">
+<body  style="background-color: #ffffff;outline:none;">
 <header class="header_shop">
     <div class="day day7 pic empty active"><div class="inday">周日<span>售罄</span></div></div>
     <div class="day day1 pic enough"><div class="inday">周一<span>充足</span></div></div>
@@ -255,30 +256,26 @@
         $(this).addClass("active");}
         $(".matte").toggle();
         $(".up_left_btn").slideToggle(500);
-        if($("body").css("overflow")=='hidden'){
-        	 $("body").css("overflow","visible")
-        }else  {
-        	$("body").css("overflow",'hidden')
-        }
+        
     })
     $(".matte").on('click',function(){
         $(".left_btn").removeClass("active");
         $(".matte").toggle();
         $(".product_detail").hide();
         $(".up_left_btn").slideUp(500);
-        $("htlm").css("overflow-y","visible")
+
 
     })
     $(".product_close").on('click',function(){
         $(".product_detail").hide();
         $(".matte").hide();
-        $("html").css("overflow-y","visible")
+
 
     })
     $(".right_btn").on('click',function(){
         $(".matte").show();
         $(".product_detail").show();
-        $("html").css("overflow-y","hidden");
+       
     })
     var changestatus=function(e){
       $(e.target).addClass("active").siblings().removeClass("active");
@@ -316,7 +313,18 @@
         })
         $(".product_all").eq(num).addClass("active").siblings().removeClass("active");
 
+
     })
+
+    $('.matte').on('touchmove',function (event){
+         event.stopPropagation();
+         event.preventDefault();
+    });
+    $('.product_detail').on('touchmove',function (event){
+         event.stopPropagation();
+         event.preventDefault();
+    });
+
 
 </script>
 
