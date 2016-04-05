@@ -266,19 +266,19 @@
         $(".matte").toggle();
         $(".product_detail").hide();
         $(".up_left_btn").slideUp(500);
-        $("body").css("overflow","visible")
+        $("htlm").css("overflow-y","visible")
 
     })
     $(".product_close").on('click',function(){
         $(".product_detail").hide();
         $(".matte").hide();
-        $("body").css("overflow","visible")
+        $("html").css("overflow-y","visible")
 
     })
     $(".right_btn").on('click',function(){
         $(".matte").show();
         $(".product_detail").show();
-        $("body").css("overflow","hidden");
+        $("html").css("overflow-y","hidden");
     })
     var changestatus=function(e){
       $(e.target).addClass("active").siblings().removeClass("active");
